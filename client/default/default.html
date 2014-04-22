@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0"/>
+<meta name="apple-mobile-web-app-capable" content="yes" /><meta http-equiv="cleartype" content="on">
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+<link type="text/css" rel="stylesheet" href="colors/green/green.css"/>
+<!--Add jQuery Mobile & UI CSS styles -->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+<!--Add jQuery, jQuery Mobile and jQuery UI -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<!--Add Custom JS-->
+<script type="text/javascript" src="js/custom.mobile.js"></script>
+<style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+  #sortable2 { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable2 li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  #sortable2 li span { position: absolute; margin-left: -1.3em; }
+  .nosort { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  .nosort li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  .nosort li span { position: absolute; margin-left: -1.3em; }
+ </style>
+ <script type="text/javascript">
+		$(document).ready(function() {
+		    //$( "#sortable" ).sortable({ handle: '.handle' });
+		    $( "#sortable" ).sortable();
+    		$( "#sortable" ).disableSelection();
+    		$( "#sortable2" ).sortable();
+    		$( "#sortable2" ).disableSelection();
+		});
+</script>
+<title>Untitled 1</title>
+</head>
+
+<body>
+
+<div class="swiper-container swiper-parent">
+    <div class="swiper-wrapper">
+			<!--Menu page-->
+			<div data-role="page" id="splash" data-title="InTouch">
+			      <div class="swiper-slide sliderbg_menu">
+			          <div class="swiper-container swiper-nested">
+			                   <div class="swiper-wrapper">
+			                        <div class="swiper-slide">
+			                                  <div class="slide-inner">
+			                                  		<div data-role="content">
+			                                        	<div class="logo"><a href="#"><img src="colors/green/images/logo.png" alt="" title="" border="0" /></a></div>
+														<div class="menu">
+			                                        		<ul>
+			                                        			<li><a href="#login"><img src="images/icons/code.png" alt="" title="" /><span>Login</span></a></li>
+			                                        			<li><a href="#milkdata"><img src="images/icons/services.png" alt="" title="" /><span>Milk Entry</span></a></li>
+			                                        			<li><a href="#ration"><img src="images/icons/docs.png" alt="" title="" /><span>Ration</span></a></li>
+			                                        		</ul>
+			                                        		<div class="clearfix"></div>
+			                                        	</div>
+			                                        </div>
+			                                 </div>
+			                         </div>
+			                   </div>
+			                  <div class="swiper-scrollbar"></div>
+			          </div> 
+			      </div>
+			</div>     
+			<!--Login page-->
+			<div data-role="page" id="login" data-title="Login">
+			      <div class="swiper-slide sliderbg_content">
+			          <div class="swiper-container swiper-nested">
+			                   <div class="swiper-wrapper">
+			                        <div class="swiper-slide">
+			                                  <div class="slide-inner">
+			                                  		<div data-role="content">
+			                                        	<div class="logo"><a href="#"><img src="colors/green/images/login.png" alt="" title="" border="0" /></a></div>
+			                                        <div data-role="fieldcontain">
+			                                        		<label for="txtUsername">User Name</label>
+			                                        		<input type="text" name="txtUsername" id="txtUsername" value=""/>
+			                                        	</div>
+			                                        	<div data-role="fieldcontain">
+			                                        		<label for="txtPassword">Password</label>
+			                                        		<input type="txtPassword" name="password" id="txtPassword" value=""/>
+			                                        	</div>
+			                                        	<button type="submit" data-theme="d" data-mini="true" OnClick="return validatejs('login')">Submit</button>
+													</div>
+			                                 </div>
+			                         </div>
+			                   </div>
+			                  <div class="swiper-scrollbar"></div>
+			          </div> 
+			      </div>
+			</div>
+			<!--Milk Production Screen-->
+			<div data-role="page" id="milkdata" data-title="Milk Entry">
+			      <div class="swiper-slide sliderbg_content">
+			          <div class="swiper-container swiper-nested">
+			                   <div class="swiper-wrapper">
+			                        <div class="swiper-slide">
+			                                  <div class="slide-inner">
+			                                  		<div data-role="content">
+			                                        	<div class="logo"><a href="#"><img src="colors/green/images/milkentry.png" alt="" title="" border="0" /></a></div>
+			                                        	<div data-role="fieldcontain">
+			                                        		<label for="txtMilkYield">Yield (kg)</label>
+			                                        		<input type="number" pattern="[0-9]" name="txtMilkYield" id="txtMilkYield" value="" placeholder="Yield (litres/day)"
+			                                        			onkeypress="return blockNonNumbers(this,event,true,false);" 
+			                                        			onblur="extractNumber(this, 0, false, false);" 
+			                                        			onkeyup="extractNumber(this, 0, false, false);"/>
+			                                        	</div>
+			                                        	<div data-role="fieldcontain">
+			                                        		<label for="txtProdDate">Date</label>
+			                                        		<input type="Date" name="txtProdDate" id="txtProdDate" value=""
+			                                        			onblur="extractDate(this, false)" 
+			                                        			onkeyup="extractDate(this, false)"/>
+			                                        	</div>
+			                                        	<div data-role="fieldcontain">
+			                                        		<label for="txtCowsInMilk">Cows In Milk</label>
+			                                        		<input type="number" pattern="[0-9]" name="txtCowsInMilk" id="txtCowsInMilk" value="" placeholder="Cows on Milk"
+			                                        			onblur="extractNumber(this, 0, false, false);" 
+                        										onkeypress="return blockNonNumbers(this,event,false,false);" 
+                        										onkeyup="extractNumber(this, 0, false, false);" />
+			                                        	</div>
+			                                        	<div data-role="fieldcontain">
+			                                        		<label for="txtTakeouts">Takeouts (kg for total cows per day)</label>
+			                                        		<input type="number" pattern="[0-9]" name="txtTakeouts" id="txtTakeouts" value="" placeholder="Takeouts (kg for total cows per day)"
+			                                        			onblur="extractNumber(this, 0, false, false);" 
+                        										onkeypress="return blockNonNumbers(this,event,false,false);" 
+                        										onkeyup="extractNumber(this, 0, false, false);" />
+			                                        	</div>
+			                                        	<div data-role="fieldcontain">
+			                                        		<label for="txtBucket">Bucket Feed (kg for total cows per day)</label>
+			                                        		<input type="number" pattern="[0-9]" name="txtBucket" id="txtBucket" value="" placeholder="Bucket Feed (kg for total cows per day)"
+			                                        			onblur="extractNumber(this, 2, false, false);" 
+                        										onkeypress="return blockNonNumbers(this,event,true,false);" 
+                        										onkeyup="extractNumber(this, 2, false, false);" />
+			                                        	</div>
+
+
+			                                        
+
+			                                        	<button type="submit" data-theme="d" data-mini="true" OnClick="return validatejs('all')">Submit</button>
+													</div>
+			                                 </div>
+			                         </div>
+			                   </div>
+			                  <div class="swiper-scrollbar"></div>
+			          </div> 
+			      </div>
+			</div>
+			<!--Ration page-->
+			<div data-role="page" id="ration" data-title="Ration">
+			      <div class="swiper-slide sliderbg_content">
+			          <div class="swiper-container swiper-nested">
+			                   <div class="swiper-wrapper">
+			                        <div class="swiper-slide">
+			                                  <div class="slide-inner">
+			                                  		<div data-role="content">
+			                                         	<ul id="sortable">
+														  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><a href="#ingredient">Item 1</a></li>
+														  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+														  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+														  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+														  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+														  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+														  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+														</ul>												
+													</div>
+			                                 </div>
+			                         </div>
+			                   </div>
+			                  <div class="swiper-scrollbar"></div>
+			          </div> 
+			      </div>
+			</div>
+			<!--Ingredient page-->
+			<div data-role="page" id="ingredient" data-title="Ingredient">
+			      <div class="swiper-slide sliderbg_content">
+			          <div class="swiper-container swiper-nested">
+			                   <div class="swiper-wrapper">
+			                        <div class="swiper-slide">
+			                                  <div class="slide-inner">
+			                                  		<div data-role="content">
+			                                  			<ul class="nosort">
+			                                  			  <li class="ui-state-default"><span class="ui-icon ui-icon-blank"></span>Item 1</li>
+														  <li class="ui-state-default"><span class="ui-icon ui-icon-blank"></span>Item 2</li>
+														  <li class="ui-state-default"><span class="ui-icon ui-icon-blank"></span>Item 3</li>
+			                                  			</ul>
+			                                         	<ul id="sortable2">
+														  
+														  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+														  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+														  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+														</ul>
+														<ul class="nosort">
+															<li class="ui-state-default"><span class="ui-icon ui-icon-blank"></span>Item 7</li>
+														</ul>												
+													</div>
+			                                 </div>
+			                         </div>
+			                   </div>
+			                  <div class="swiper-scrollbar"></div>
+			          </div> 
+			      </div>
+			</div>
+
+
+
+      </div>
+ </div>
+
+</body>
+
+</html>
